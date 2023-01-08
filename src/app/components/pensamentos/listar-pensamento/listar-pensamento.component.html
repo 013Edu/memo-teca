@@ -1,0 +1,41 @@
+
+<section class="container">
+  <header class="header d-flex">
+    <div class="buscar-pensamentos">
+      <input
+      type="search"
+      class="filtro"
+      placeholder="Oque você procura?"
+      autofocus
+      [(ngModel)]="filtro"
+      (keyup)="buscarPorPensamento()"
+      >
+    </div>
+    <h2 class="ff-inter"> {{ titulo }} </h2>
+    <div class="botoes">
+      <button class="botao" (click)="voltarMeuMural()">Meu Mural</button>
+      <button class="botao" (click)="buscarPorFavoritos()">Meus Favoritos</button>
+      <button routerLink="/criarPensamento" class="botao">Adicionar Pensamento</button>
+    </div>
+  </header>
+  <div class="mural" *ngIf="listaPensamentos.length > 0, else pensamentoVazio">
+    <div *ngFor="let pensamento of listaPensamentos">
+      <app-pensamento
+      [pensamento]="pensamento"
+      [listaFavoritos]="listaFavoritos"
+      >
+      </app-pensamento>
+    </div>
+  </div>
+</section>
+<app-botao-carregar-mais
+[haMaisPensamentos]="haMaisPensamentos"
+(click)="carregarMaisPensamentos()"
+>
+
+</app-botao-carregar-mais>
+<ng-template #pensamentoVazio>
+  <h2 class="ff-inter">
+    Ainda não existe nenhum pensamento!
+  </h2>
+</ng-template>

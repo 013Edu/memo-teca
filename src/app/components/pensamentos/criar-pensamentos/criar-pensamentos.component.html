@@ -1,0 +1,112 @@
+<section class="container criar-pensamentos ff-inter">
+  <header class="header">
+      <h2>Adicione um <br> pensamento novo:</h2>
+  </header>
+  <form [formGroup]="formulario">
+    <label for="pensamento">Pensamento</label>
+    <input
+      type="textarea"
+      class="input"
+      id="pensamento"
+      formControlName="conteudo"
+      placeholder="Digite o pensamento"
+        >
+
+        <div class="mensagem__erro"
+        *ngIf="formulario.get('conteudo')?.errors?.['required'] && formulario.get('conteudo')?.touched">
+        Pensamento é obrigatório!
+       </div>
+       <div class="mensagem__erro"
+       *ngIf="formulario.get('conteudo')?.errors?.['minlenght'] && formulario.get('conteudo')?.touched">
+       Pensamento deve ter no mínimo 3 caracteres!
+      </div>
+
+        <label for="autoria">Autoria ou Fonte</label>
+        <input
+          type="textarea"
+          class="input"
+          id="autoria"
+          formControlName="autoria"
+          placeholder="Digite a autoria ou fonte"
+            >
+
+            <div class="mensagem__erro"
+            *ngIf="formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched">
+            Autoria é obrigatória!
+           </div>
+           <div class="mensagem__erro"
+           *ngIf="formulario.get('autoria')?.errors?.['minlenght'] && formulario.get('autoria')?.touched">
+           Autoria deve ter no mínimo 3 caracteres!
+          </div>
+
+            <label for="modelo">selecione o modelo do card:</label>
+            <div class="container-radio">
+              <div class="radio-modelo">
+                <label for="modelo1">
+                  <input
+                  type="radio"
+                  formControlName="modelo"
+                  id="modelo1"
+                  value="modelo1"
+                  >
+                  <div class="custom-radio">
+                    <span></span>
+                  </div>
+                  <span>Modelo 1</span>
+                </label>
+                  Prévia:
+                  <div class="modelo modelo1 ff-roboto-mono">
+                    <img src="../../../../assets/Imagens do curso/modelo1.png" alt="Aspas azuis">
+                    <p class="conteudo"> {{ formulario.get('conteudo')?.value }} </p>
+                    <p class="autoria"><b> {{ formulario.get('autoria')?.value }} </b></p>
+                  </div>
+              </div>
+
+              <div class="radio-modelo">
+                <label for="modelo2">
+                  <input
+                  type="radio"
+                  formControlName="modelo"
+                  id="modelo2"
+                  value="modelo2"
+                  >
+                  <div class="custom-radio">
+                    <span></span>
+                  </div>
+                  <span>Modelo 2</span>
+                </label>
+                  Prévia:
+                  <div class="modelo modelo2 ff-roboto-mono">
+                    <img src="../../../../assets/Imagens do curso/modelo2.png" alt="Aspas azul claro">
+                    <p class="conteudo"> {{ formulario.get('conteudo')?.value }} </p>
+                    <p class="autoria"><b> {{ formulario.get('autoria')?.value }} </b></p>
+                  </div>
+              </div>
+
+              <div class="radio-modelo">
+                <label for="modelo3">
+                  <input
+                  type="radio"
+                  formControlName="modelo"
+                  id="modelo3"
+                  value="modelo3"
+                  >
+                  <div class="custom-radio">
+                    <span></span>
+                  </div>
+                  <span>Modelo 3</span>
+                </label>
+                  Prévia:
+                  <div class="modelo modelo3 ff-roboto-mono">
+                    <img src="../../../../assets/Imagens do curso/modelo3.png" alt="Aspas verdes">
+                    <p class="conteudo"> {{ formulario.get('conteudo')?.value }} </p>
+                    <p class="autoria"><b> {{ formulario.get('autoria')?.value }} </b></p>
+                  </div>
+              </div>
+            </div>
+            <div class="acoes">
+              <button [disabled]="!formulario.valid" [ngClass]="habilitarBotao()" (click)="criarPensamento()">Salvar</button>
+              <button (click)="cancelarPensamento()" routerLink="/listarPensamento" class="botao">Cancelar</button>
+          </div>
+    </form>
+</section>

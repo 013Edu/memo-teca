@@ -1,0 +1,67 @@
+{
+  "pensamentos": [
+    {
+      "id": 1,
+      "conteudo": "Angular é o melhor framework",
+      "autoria": "Edu",
+      "modelo": "modelo3",
+      "favorito": true
+    },
+    {
+      "id": 2,
+      "conteudo": "Estudando Angular",
+      "autoria": "Dev Alura",
+      "modelo": "modelo2",
+      "favorito": false
+    },
+    {
+      "id": 3,
+      "conteudo": "Angular ",
+      "autoria": "Dev Alura",
+      "modelo": "modelo3",
+      "favorito": false
+    },
+    {
+      "id": 4,
+      "conteudo": "Estudando Angular",
+      "autoria": "Dev Alura",
+      "modelo": "modelo2",
+      "favorito": false
+    },
+    {
+      "id": 5,
+      "conteudo": "Estudando Angular",
+      "autoria": "Dev Alura",
+      "modelo": "modelo2",
+      "favorito": false
+    },
+    {
+      "id": 6,
+      "conteudo": "Estudando Angular",
+      "autoria": "Dev Alura",
+      "modelo": "modelo2",
+      "favorito": true
+    },
+    {
+      "id": 7,
+      "conteudo": "Estudando Angular",
+      "autoria": "Dev Alura",
+      "modelo": "modelo2",
+      "favorito": true
+    },
+    {
+      "id": 8,
+      "conteudo": "Estudando Angular",
+      "autoria": "Dev Alura",
+      "modelo": "modelo2",
+      "favorito": true
+    },
+    {
+      "conteudo": "Angular é muito bom",
+      "autoria": "Eduardo",
+      "modelo": "modelo2",
+      "favorito": false,
+      "id": 9
+    }
+  ]
+}
